@@ -1,0 +1,51 @@
+private void exportToCSV() {
+        if (contacts.isEmpty()) {
+            System.out.println("❌ No contacts to export.");
+            return;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("contacts.csv"))) {
+            // Write header
+            writer.write("Name,Phone,Email");
+            writer.newLine();
+
+            // Write contact details
+            for (Contact contact : contacts) {
+                writer.write(contact.toCSV());
+                writer.newLine();
+            }
+            System.out.println("✅ Contacts exported to contacts.csv!");
+        } catch (IOException e) {
+            System.out.println("❌ An error occurred while exporting contacts.");
+            e.printStackTrace();
+        }
+    }
+
+    // Method to import contacts from a CSV file
+    private void importFromCSV() {
+        File file = new File("contacts.csv");
+        if (!file.exists()) {
+            System.out.println("❌ No contacts.csv file found.");
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            reader.readLine(); // Skip the header line (Name,Phone,Email)
+
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length == 3) {
+                    // Create a new Contact object from the data
+                    String name = data[0].trim();
+                    String phone = data[1].trim();
+                    String email = data[2].trim();
+                    contacts.add(new Contact(name, phone, email));
+                }
+            }
+            System.out.println("✅ Contacts imported from contacts.csv!");
+        } catch (IOException e) {
+            System.out.println("❌ An error occurred while importing contacts.");
+            e.printStackTrace();
+        }
+    }

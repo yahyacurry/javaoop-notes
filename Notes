@@ -1,0 +1,135 @@
+Objects, Classes, and Constructors
+
+What Is a Class?
+A class is a blueprint of an object
+
+What is a Object
+Object is an instance of a class
+Student john = new Student("John", 25, "23 East, California");
+is an object
+("John", 25, "23 East, California"); this in the objects are called arguments
+
+String name;
+int age;
+String address;
+
+this.age = age;
+represents that the current object age
+ will be inputted by whatever value enters age;
+
+A constructor is a special type of method
+which is provided by java to initialize any classes objects
+
+an example of an constructor would be
+
+Public Student(String name, int age, String address){
+this.name = name;
+this.age = age;
+this.address = address;
+}
+
+if you want to create multiple objects of the student class
+then you can call that constructor
+----------------------------------------------------------
+Access Modifiers
+
+Modifier: Public
+Accessible in Class, Package, Subclass, World.
+
+Modifier: Protected
+Accessible in Class, Package, Subclass.
+
+Modifier: default
+Accessible in Class, Package.
+
+Modifier: Private
+Accessible in Class.
+
+----------------------------------------------------------
+Encapsulation
+
+Encapsulation means restrict accessing to the outside world.
+Encapsulation basically means to put an capsule shape around the getters and setters
+so it can provide the protection layer, you get to define who can access it
+
+you want your object to be accessible but you want the restriction on the axis
+on the properties of your object.
+
+Getters are used to return a value, for example if write sout.getName()
+I am asking for it to return the name.
+
+Encapsulation are the getters and setters method in java
+
+(private) or (protected) String getName(){
+return name
+}
+you are limiting the access to the class or package.
+
+
+
+but if you change it to private or protected you are limiting the access
+public String getName(){
+return name
+}
+you are allowing the access of the getter to everyone.
+
+Setters in java are to override the value of the original and replace it with a new one.
+for example, I can write
+Public void setName(String name){
+this.name = name;
+}
+this is saying to override the original name with a new name provided.
+
+the this.name = name statement says to set the current name
+property of this particular object with the name that is coming in
+from the argument
+
+Encapsulation allows you to have complete control over how
+you can limit others access
+
+---------------------------------------------------------
+Abstraction
+
+Abstraction is basically used to hide something
+meaning you use it when you want to hide something particular from an object
+
+Abstraction declares a method but does not implement it
+
+This is how the abstract method is used:
+
+abstract void draw()
+abstract void resize()
+
+you are declaring the method just not implementing it
+
+if a java class is abstract and in that class there are constructors or anything
+you can not inherit it because the java class is abstract
+
+you can not use multiple inherits with java
+a child class can only have one parent not 2
+-------------------------------------------------------
+Interfaces
+
+interfaces are going to determine how the application or code is going to behave
+
+in the Java programming language, an interface is a reference type,
+similar to a class that can contain only constants,
+method signatures, default methods, static methods and nested types
+
+----------------------------------------------------------
+Inheritance
+
+A child class inherits from an parent class
+for example,
+class Mountain Bike extends bicycle.
+
+Bicycle being the parent class and the child class inheriting from it.
+
+The power of inheritance is that anything used in the parent class can again
+be used in the child class.
+
+whenever you see a relationship between 2 objects or 2 entities that means
+that there might be the usage of inheritance between them
+
+
+
