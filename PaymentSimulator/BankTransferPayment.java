@@ -20,10 +20,11 @@ public class BankTransferPayment implements PaymentMethod, Refundable {
 
     }
 
+
     @Override
-    public void Refund(double amount) {
-        System.out.println("Enter the amount you want to refund");
-        amount = scanner.nextDouble();
-        System.out.println("Success Fully refunded BankTransfer payment of: " + amount);
+    public void processRefund(double amount) {
+        System.out.println("Processing refund to Bank Transfer...");
+        System.out.println("Refund of $" + amount + " successful!");
     }
 }
+

@@ -15,11 +15,13 @@ class PayPalPayment implements PaymentMethod, Refundable {
         System.out.println("Receipt: Payment made with PayPal");
     }
 
+
+
     @Override
-    public void Refund(double amount) {
-        System.out.println("Enter the amount you want to refund");
-        amount = scanner.nextDouble();
-        System.out.println("Success Fully refunded paypal payment of: " + amount);
+    public void processRefund(double amount) {
+        System.out.println("Processing refund to paypal...");
+        System.out.println("Refund of $" + amount + " successful!");
     }
 }
+
 

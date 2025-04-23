@@ -1,5 +1,7 @@
 package PaymentSimulator;
 
-public interface Refundable {
-    void Refund(double amount);
-}
+
+    public interface Refundable {
+        void processRefund(double amount);
+    }
+
