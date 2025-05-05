@@ -6,4 +6,5 @@ public interface PaymentMethod {
 
      void generateReceipt();
 
+
 }
